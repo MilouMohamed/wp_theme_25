@@ -60,7 +60,7 @@ function medoxMil_bootstrap_menu(){
         'theme_location' => 'boostrap_menu_01',
         'menu_class' => 'nav navbar-nav navbar-right  medox-001',
         'container' => false, // ← IMPORTANT : false pour Bootstrap
-        'depth' => 2, // Pour les sous-menus dropdown
+        'depth' => 4, // Pour les sous-menus dropdown
         'walker'=> new WP_Bootstrap_Navwalker(),
         'fallback_cb' => function() {
             // Fallback personnalisé pour Bootstrap
@@ -95,7 +95,7 @@ add_theme_support('post-thumbnails');
  *  the_excerpt 
  */
 function medoxMil_excerpt_length($length){ 
-return  5 ; //attention rede more dans post edite 
+return  20 ; //attention rede more dans post edite 
 }
 
 add_filter('excerpt_length','medoxMil_excerpt_length');

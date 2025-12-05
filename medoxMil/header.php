@@ -3,7 +3,10 @@
 
 <head>
     <meta charset="<?php  bloginfo('charset');   ?>" />
-    <title> <?php   bloginfo('name')   ?> </title>
+    <title>
+         <?php   wp_title('|','true','right')  ?>
+         <?php   bloginfo('name')   ?>
+         </title>
     <link rel="pingback" href="<?php  bloginfo('pingback_url')   ?>" />
 
     <?php wp_head() ;?>
@@ -11,7 +14,7 @@
 
 <?php  //  get_header()   ?>
 
-<body style="padding-top: 50px;">
+<body style="padding-top: 50px;padding-bottom: 50px;">
     <!-- OU ICI -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container ">
@@ -24,7 +27,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Brand</a>
+                <a class="navbar-brand" href="<?php  bloginfo( 'url')  ?>"><?php  bloginfo('name')  ?></a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
