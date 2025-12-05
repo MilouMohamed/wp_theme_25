@@ -8,7 +8,7 @@
 
  .main-post {
      background-color: #ffffff;
-     background-image: linear-gradient(0deg,rgb(231, 186, 186), white);
+     /*! background-image: linear-gradient(0deg,rgb(231, 186, 186), white); */
      padding: 15px;
 margin: 5px 0 15px 0;
 border-radius: 5px;
@@ -41,15 +41,19 @@ border: 1px solid #0000008e;
 .main-post .desc{
     display: block; 
     font-size: 13px;
-    color: #555555; 
+    color: #868686; 
     line-height: 1.8;
 }
 
 .main-post .cat{
     display: block; 
     font-size: 12px;
-    color: #413838;
+    color: #ea0d0d;
     margin-bottom: 5px;
+}
+
+.main-post .cat a{
+        color: #734e4e;
 }
 
 .main-post svg{
@@ -69,7 +73,38 @@ border: 1px solid #0000008e;
 
 
 
+.post-pagination  a{
+    background-color: white ;
+    padding: 4px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition:all .5s ;
+}
 
+.post-pagination  a:hover{
+    background-color: black;
+    color: white;
+}
+
+.post-pagination  svg{
+    font-weight: bold; 
+    color: red ;
+}
+
+
+
+.post-pagination  span{
+    background-color: white ;
+     padding: 4px 20px;
+    border-radius: 4px;
+    opacity: .5;
+    cursor:not-allowed;
+}
+
+.post-pagination   span svg{
+    color: black;
+       opacity: .5;
+}
 
 
 
