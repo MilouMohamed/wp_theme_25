@@ -95,7 +95,7 @@ add_theme_support('post-thumbnails');
  *  the_excerpt 
  */
 function medoxMil_excerpt_length($length){ 
-return  20 ; //attention rede more dans post edite 
+return  50 ; //attention rede more dans post edite 
 }
 
 add_filter('excerpt_length','medoxMil_excerpt_length');

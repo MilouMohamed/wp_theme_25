@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="container home-page">
+<div class="container  ">
     <div class="row">
         <?php $indx = 0;
         if (have_posts()) {
@@ -8,8 +8,9 @@
                 $indx++;
                 the_post(); ?>
 
-        <div class="col-xs-6 col-sm-6 col-md-4">
-            <div class="main-post">
+        <div class="col-xs-12">
+            <div class="main-post  single-post ">
+                <?php       edit_post_link( '<i class="fa-regular fa-pen-to-square"></i>  Modifer ce Post ',null,null,null,'link-edite-post-1' ) ; ?>
                 <a href="<?php the_permalink() ?>" class="permalink">
                     <h4>
                         <?php  
@@ -32,7 +33,7 @@
                         ]); ?>
 
                 <div class="desc">
-                    <?php the_excerpt(); ?>
+                    <?php the_content( ); ?>
                 </div>
 
                 <span class="cat">
@@ -65,27 +66,27 @@
         <div class="row">
             <div class="col-sm-6  prev">
                 <?php
-        if (get_previous_posts_link( )) {
-            previous_posts_link('<i class="fa-solid fa-chevron-left"></i> Prev');
+        if (get_previous_post_link( )) {
+           previous_post_link('%link','<i class="fa-solid fa-chevron-left"></i> Prev : %title');
         } else {
-            echo '<span class="text-muted"><i class="fa-solid fa-chevron-left"></i> Prev</span>';
+            echo '<span class="text-muted"><i class="fa-solid fa-chevron-left"></i> Prev None</span>';
         }
         ?>
             </div>
 
             <div class="col-sm-6 text-right next">
                 <?php
-        if (get_next_posts_link( )) {
-             next_posts_link('Next <i class="fa-solid fa-chevron-right"></i>', $wp_query->max_num_pages);
+        if (get_next_post_link( )) {
+             next_post_link('%link',' Next : %title <i class="fa-solid fa-chevron-right"></i>');;
         } else {
-            echo '<span class="text-muted">  Next <i class="fa-solid fa-chevron-right"></i></span>';
+            echo '<span class="text-muted">  Next None <i class="fa-solid fa-chevron-right"></i></span>';
         }
         ?>
             </div>
         </div>
 
     </div>
-
+<?php comments_template( ); ?>
 
 </div>
 

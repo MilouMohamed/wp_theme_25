@@ -5,8 +5,8 @@
      background-color: #c5c5c5;
  }
 
-
- .main-post {
+.home-page  .main-post ,
+  .main-post {
      background-color: #ffffff;
      /*! background-image: linear-gradient(0deg,rgb(231, 186, 186), white); */
      padding: 15px;
@@ -14,30 +14,31 @@ margin: 5px 0 15px 0;
 border-radius: 5px;
 border: 1px solid #0000008e;
  }
-
+.home-page   .main-post  h2 ,
  .main-post  h2{
     color: #333333c4;
     font-weight: bold;
     margin: 0 0 10px 0;
     padding: 0;
  }
+ .home-page .main-post .info ,
 .main-post .info{
     font-size: 14px;
-    color: #777777  ;
+    color: #777777  ;  
 }
-
-.main-post .info{
-    font-size: 12px;
-}
-
+ .home-page .main-post .main-post .info svg ,
 .main-post .info svg{
     font-size: 12px;
 }
 
+ .home-page .main-post img ,
 .main-post img {
     display: block  ;
     margin: 10px 0;
 }
+
+
+ .home-page .main-post .desc,
 .main-post .desc{
     display: block; 
     font-size: 13px;
@@ -45,6 +46,7 @@ border: 1px solid #0000008e;
     line-height: 1.8;
 }
 
+ .home-page .main-post .cat,
 .main-post .cat{
     display: block; 
     font-size: 12px;
@@ -52,19 +54,25 @@ border: 1px solid #0000008e;
     margin-bottom: 5px;
 }
 
+ .home-page  .main-post .cat a,
 .main-post .cat a{
         color: #734e4e;
 }
 
+ .home-page  .main-post svg,
 .main-post svg{
     color: rgb(151, 114, 114);
 }
 
  
+ .home-page  .main-post .permalink h2,
 .main-post .permalink h2{
   border-bottom: 2px dashed #aaa;
   font-size: 25px;
 }
+
+ .home-page  .main-post .permalink:hover,
+ .home-page  .permalink:hover h2,
 .main-post .permalink:hover ,
 .main-post .permalink:hover h2{
  text-decoration: none;
@@ -73,6 +81,7 @@ border: 1px solid #0000008e;
 
 
 
+ .home-page  .post-pagination  a,
 .post-pagination  a{
     background-color: white ;
     padding: 4px 20px;
@@ -81,11 +90,13 @@ border: 1px solid #0000008e;
     transition:all .5s ;
 }
 
+ .home-page   .post-pagination  a:hover,
 .post-pagination  a:hover{
     background-color: black;
     color: white;
 }
 
+ .home-page   .post-pagination  svg,
 .post-pagination  svg{
     font-weight: bold; 
     color: red ;
@@ -93,6 +104,7 @@ border: 1px solid #0000008e;
 
 
 
+ .home-page   .post-pagination  span,
 .post-pagination  span{
     background-color: white ;
      padding: 4px 20px;
@@ -101,13 +113,62 @@ border: 1px solid #0000008e;
     cursor:not-allowed;
 }
 
+ .home-page  .post-pagination   span svg,
 .post-pagination   span svg{
     color: black;
        opacity: .5;
 }
+/*****End all Posts **************/
+
+/******* Start single Post *******/
+
+.single-post {
+    position: relative;
+}
+.single-post .link-edite-post-1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 4px 8px ;
+    background-color: #868686;
+    color: white;
+    text-decoration: none;
+}
+.single-post .link-edite-post-1 svg {  
+    color: white; 
+}
+
+.single-post .link-edite-post-1:hover  ,
+.single-post .link-edite-post-1:hover  svg{ 
+     background-color: white;
+    color: #868686; 
+}
+.single-post .desc{
+    display: block; 
+    font-size: 13px;
+    color: #868686;
+  margin-top: 25px;
+    
+}
+
+.single-post .desc p {
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    line-height: 25px;
+}
+
+.single-post   .desc{
+    display: block; 
+    font-size: 13px;
+    color: #868686; 
+    line-height: 20 !important;;
+   
+}
 
 
-
+/******* End single Post *******/
 
 
 
