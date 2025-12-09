@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="container  ">
+<div class="container   single-post">
     <div class="row">
         <?php $indx = 0;
         if (have_posts()) {
@@ -9,7 +9,7 @@
                 the_post(); ?>
 
         <div class="col-xs-12">
-            <div class="main-post  single-post ">
+            <div class="main-post  ">
                 <?php       edit_post_link( '<i class="fa-regular fa-pen-to-square"></i>  Modifer ce Post ',null,null,null,'link-edite-post-1' ) ; ?>
                 <a href="<?php the_permalink() ?>" class="permalink">
                     <h4>
@@ -64,7 +64,7 @@
 
 
         <div class="row">
-            <div class="col-sm-6  prev">
+            <div class="col-xs-6  prev">
                 <?php
         if (get_previous_post_link( )) {
            previous_post_link('%link','<i class="fa-solid fa-chevron-left"></i> Prev : %title');
@@ -74,7 +74,7 @@
         ?>
             </div>
 
-            <div class="col-sm-6 text-right next">
+            <div class="col-xs-6 text-right next">
                 <?php
         if (get_next_post_link( )) {
              next_post_link('%link',' Next : %title <i class="fa-solid fa-chevron-right"></i>');;
@@ -87,6 +87,17 @@
 
     </div>
 <?php comments_template( ); ?>
+
+
+
+<?php 
+
+$coments=array(
+
+    'label_submit'=> 'EnrGestre Commenatire',
+);
+comment_form( $coments );
+ ?>
 
 </div>
 

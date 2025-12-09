@@ -8,7 +8,7 @@
                 $indx++;
                 the_post(); ?>
 
-        <div class="col-xs-6 col-sm-6 col-md-4">
+        <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="main-post">
                 <a href="<?php the_permalink() ?>" class="permalink">
                     <h4>
@@ -63,7 +63,7 @@
 
 
         <div class="row">
-            <div class="col-sm-6  prev">
+            <div class="col-xs-6  prev">
                 <?php
         if (get_previous_posts_link( )) {
             previous_posts_link('<i class="fa-solid fa-chevron-left"></i> Prev');
@@ -73,7 +73,7 @@
         ?>
             </div>
 
-            <div class="col-sm-6 text-right next">
+            <div class="col-xs-6 text-right next">
                 <?php
         if (get_next_posts_link( )) {
              next_posts_link('Next <i class="fa-solid fa-chevron-right"></i>', $wp_query->max_num_pages);
