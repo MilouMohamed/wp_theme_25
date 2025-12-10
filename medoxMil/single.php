@@ -88,16 +88,13 @@
     </div>
 <?php comments_template( ); ?>
 
-
-
-<?php 
-
-$coments=array(
-
-    'label_submit'=> 'EnrGestre Commenatire',
+ <?php
+$coments = array( 
+    'submit_button' => '  <button name="submit" type="submit" id="submit" class="submit btn btn-primary btn-block"  > %s De medox  </button>  ',
 );
-comment_form( $coments );
- ?>
+comment_form($coments);
+?>
+</div>
 
 </div>
 
