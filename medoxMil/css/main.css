@@ -5,6 +5,26 @@
      background-color: #c5c5c5;
  }
 
+
+hr,
+.hr-01 {
+     
+ margin:2px;
+    padding:5px;
+    background: #9d9d9ded; 
+ 
+}
+
+
+
+
+
+
+
+
+
+/**********  END GLOBAAAL   *******/
+/****************************/
 .home-page  .main-post ,
   .main-post {
      background-color: #ffffff;
@@ -80,10 +100,9 @@ border: 1px solid #0000008e;
 }
 
 
-
- .home-page  .post-pagination  a,
+ 
 .post-pagination  a{
-    background-color: white ;
+    background-color: white ; 
     padding: 4px 20px;
     border-radius: 4px;
     text-decoration: none;
@@ -166,6 +185,43 @@ border: 1px solid #0000008e;
     line-height: 20 !important;;
    
 }
+.info-author{
+    margin: 5px 5px 20px;
+}
+
+
+
+/* Start info Aujthor  */
+.info-author{
+    background: rgba(1,1,1,.1) !important;
+    padding: 3px 3px 10px
+}
+.info-author h4{
+    color: rgb(255, 251, 251);
+    font-size: 22px;
+    font-weight: bold;
+}
+.info-author h4 span{
+    color: rgba(100,20,150,1);
+}
+.info-author p{
+    color: rgba(10,0,0,.6);
+    
+}
+.info-author .avatar {
+    margin-bottom: 5px;
+    margin-top: 5px; 
+}
+.info-author .nbr-pst ,
+.info-author .link-pst {
+    margin: 0
+}
+
+
+
+/* End info Aujthor  */
+
+
 
 
 .comments-number {
@@ -232,7 +288,7 @@ border: 1px solid #0000008e;
     top: 0;
     margin:4px 0px;
     padding: 3px 8px;
-    border: 1px white solid;
+    /*! border: 1px white solid; */
     transition: all .5s ;
 }
 .our-comments-liste .comment .comment-body .reply:hover {
@@ -258,13 +314,63 @@ border: 1px solid #0000008e;
      background-color: #b9b9b9;
 }
 
-
+.comment-reply-title {
+    background-color: white;
+    padding: 5px 10px;
+    border-radius:5px  100%  100%  0px;
+}
 
 /*Start All cmnts img ... **/
 
 
 /******* End single Post *******/
 
+/******* start  page Profile author *******/
+.page_profile_author .info-p-profile h4 {
+    
+    margin: 3px;
+    color: black;
+    
+}
+
+.page_profile_author .info-glob {
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+
+.page_profile_author .info-p-profile p {
+    
+    margin:10px 5px; 
+    background-color: gray;
+    color: white;
+    padding: 6px 15px;
+    
+}
+
+.page_profile_author .info-status .statu   {
+    background-color: white;
+    padding: 15px 5px;
+    border: 1px solid #ccc;
+    margin: 0px;
+    font-size: 13px;
+}
+ 
+.page_profile_author .info-status > div:first-child,
+.page_profile_author .info-status > div:last-child{
+    margin:  0px ;  
+    padding: 0
+}
+.page_profile_author .info-status .statu p span{
+    font-size: 40px;
+    display: block;
+    margin-top: 5px
+}  
+
+/******* End  page Profile author *******/
+ 
 
 
 
