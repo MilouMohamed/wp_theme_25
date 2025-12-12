@@ -348,6 +348,7 @@ border: 1px solid #0000008e;
     color: white;
     padding: 6px 15px;
     
+    background-image: linear-gradient(rgba(250,1,1,.2),black);
 }
 
 .page_profile_author .info-status .statu   {
@@ -371,8 +372,18 @@ border: 1px solid #0000008e;
 
 /******* End  page Profile author *******/
  
+.page_profile_author .info-p-profile  h4{
+    background-color: rgba(11,1,1,.1); 
+    padding: 1px 5px;
+    
+}
 
-
+.page_profile_author .info-p-profile  h4 span {
+   min-width: 150px; 
+    display: inline-block;
+       background-color: rgba(11,1,1,.1); 
+    border-radius: 0 100% 100% 0px ;
+}
 
 
 
