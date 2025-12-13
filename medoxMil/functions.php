@@ -95,6 +95,10 @@ add_theme_support('post-thumbnails');
  *  the_excerpt 
  */
 function medoxMil_excerpt_length($length){ 
+if(is_author()){
+  return 30 ;
+}
+
 return  50 ; //attention rede more dans post edite 
 }
 

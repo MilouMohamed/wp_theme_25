@@ -15,11 +15,55 @@ hr,
  
 }
 
+.bg-white {
+    background-color: white;
+}
 
+ .page_profile_author  .author-post{
+    background-color: #0000001c !important; 
+    display: flex;
+    margin-bottom: 5px;
+    padding: 5px;
+    position: relative;
+    overflow: hidden;
+}
+ 
+ .page_profile_author  .author-post::before{
+     position: absolute;
+    top: 12px;
+    right: -22px;
+    transform: rotate(45deg);
+    content: "MilMed";
+    background-color: #ffffff;
+    color: black;
+    padding: 1px 25px;
+    font-size: 11px;
 
+}
 
+ .page_profile_author .author-post .info ,
+ .page_profile_author .author-post .info * {
+color: #52547f;
+}
 
+.page_profile_author .row-cmnt {
+ background-color: #ffffff;
+    color: black;
+margin: 5px 0px;
+padding: 4px 10px;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+flex-wrap: wrap;
+gap: 10px 20px;
+}
+/*
+.alert ,
+.comment  div[class^="col-"]{
 
+padding: 0px;
+
+} */
 
 
 
@@ -384,6 +428,31 @@ border: 1px solid #0000008e;
        background-color: rgba(11,1,1,.1); 
     border-radius: 0 100% 100% 0px ;
 }
+
+
+.page_profile_author .postes { 
+
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.page_profile_author .postes .alert {
+    padding: 5px 15px;
+    margin: 10px auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
