@@ -8,96 +8,97 @@
                 $indx++;
                 the_post(); ?>
 
-        <div class="col-xs-12">
-            <div class="main-post  ">
-                <?php edit_post_link('<i class="fa-regular fa-pen-to-square"></i>  Modifer ce Post ', null, null, null, 'link-edite-post-1'); ?>
-                <a href="<?php the_permalink() ?>" class="permalink">
-                    <h4>
-                        <?php
+                <div class="col-xs-12">
+                    <div class="main-post  ">
+                        <?php edit_post_link('<i class="fa-regular fa-pen-to-square"></i>  Modifer ce Post ', null, null, null, 'link-edite-post-1'); ?>
+                        <a href="<?php the_permalink() ?>" class="permalink">
+                            <h4>
+                                <?php
                                 $title = get_the_title();
                                 $short = mb_strimwidth($title, 0, 25, '...');
                                 echo $short . ' N° ' . $indx;
                                 ?>
-                    </h4>
-                </a>
-                <span class="info">
-                    <i class="fa fa-user"></i><?php the_author_posts_link(); ?>
-                    <i class="fa fa-calendar"></i><?php the_time('F j, Y') ?>
-                    <i class="fa fa-comments"></i><?php comments_popup_link('0 Comments', '1 Comment', '% Comments'); ?>
-                </span>
+                            </h4>
+                        </a>
+                        <span class="info">
+                            <i class="fa fa-user"></i><?php the_author_posts_link(); ?>
+                            <i class="fa fa-calendar"></i><?php the_time('F j, Y') ?>
+                            <i class="fa fa-comments"></i><?php comments_popup_link('0 Comments', '1 Comment', '% Comments'); ?>
+                        </span>
 
-                <?php the_post_thumbnail('', [
+                        <?php the_post_thumbnail('', [
                             'class' => 'img-responsive thumbnail',
                             'title' => 'img by medox',
                             'data-info' => 'img by medox Milou'
                         ]); ?>
 
-                <div class="desc">
-                    <?php the_content(); ?>
-                </div>
+                        <div class="desc">
+                            <?php the_content(); ?>
+                        </div>
 
-                <span class="cat">
-                    <i class="fa fa-fw fa-tags"></i>
-                    <?php the_category(', '); ?>
-                </span>
+                        <span class="cat">
+                            <i class="fa fa-fw fa-tags"></i>
+                            <?php the_category(', '); ?>
+                        </span>
 
-                <span class="post-tags">
-                    <?php
+                        <span class="post-tags">
+                            <?php
                             if (has_tag()) {
                                 the_tags('<i class="fa-solid fa-hashtag"></i>');
                             } else {
                                 echo 'Pas de Tag !!!';
                             }
                             ?>
-                </span>
-            </div>
-        </div>
+                        </span>
+                    </div>
+                </div>
 
-        <?php endwhile;
+            <?php endwhile;
         } ?>
     </div>
 
-<!--Start Auteur Ici  --> 
-   <div class="row info-author">       
-        <div class="col-xs-12  col-md-2"> 
-            <?php  
-                    $arg_aray=array(
-                        'class'=>'img-responsive thumbnail  center-block',
-                    );
+    <!--Start Auteur Ici  -->
+    <div class="row info-author">
+        <div class="col-xs-12  col-md-2">
+            <?php
+            $arg_aray = array(
+                'class' => 'img-responsive thumbnail  center-block',
+            );
 
-                 echo    get_avatar(get_the_author_meta( 'ID'),100,'', 'Avatar Med',$arg_aray  )
+            echo get_avatar(get_the_author_meta('ID'), 100, '', 'Avatar Med', $arg_aray)
                 ?>
-                <hr class="hr-01" />
-<p  class=" nbr-pst  text-center">
-    <i class="fa-solid fa-paste"></i> : <?php echo   count_user_posts( get_the_author_meta( 'ID' ) )     ?> Posts
-</p>
-<p  class=" link-pst  text-center">
-    <i class="fa-solid fa-user-pen"></i> : <?php       the_author_posts_link(   )    ?>
-</p>
+            <hr class="hr-01" />
+            <p class=" nbr-pst  text-center">
+                <i class="fa-solid fa-paste"></i> : <?php echo count_user_posts(get_the_author_meta('ID')) ?>
+                Posts
+            </p>
+            <p class=" link-pst  text-center">
+                <i class="fa-solid fa-user-pen"></i> : <?php the_author_posts_link() ?>
+            </p>
         </div>
         <div class="col-xs-12  col-md-10">
             <h4> first_name :
                 <?php the_author_meta('first_name');
-            the_author_meta('last_name');
-            echo '(<span>';
-            the_author_meta('nickname');
-            echo '</span>)'; ?>
+                the_author_meta('last_name');
+                echo '(<span>';
+                the_author_meta('nickname');
+                echo '</span>)'; ?>
             </h4>
             <p>
 
-                <?php if (get_the_author_meta('description')) {  
+                <?php if (get_the_author_meta('description')) {
 
-                the_author_description(  );
-            } else {
-                echo '  No  description for this author  (by Medox)';
-            }
-            ?>
-            </p> 
+                    the_author_description();
+                } else {
+                    echo '  No  description for this author  (by Medox)';
+                }
+                ?>
+            </p>
 
 
-        </div> 
+        </div>
     </div>
-<!--End Auteur Ici  -->
+    <!--End Auteur Ici  -->
 
     <!-- PAGINATION ICI -->
 
@@ -130,7 +131,7 @@
     </div>
     <hr>
 
- 
+
 
 
 
@@ -150,7 +151,67 @@
     comment_form($comments_args);
 
     ?>
-</div>
+
+
+    <!-- Start Post random  :§/§ -->
+     <hr>
+    <div class="postes">
+        <!-- Exercice de video  -->
+
+        <?php $indx = 0;
+        // categories ids
+        $id_post =  get_queried_object_id() ;
+        $id_cat = wp_get_post_categories( $id_post );
  
+        $postsNbrPerPage = 4;
+        $postsNbr = 5;
+        $the_query_args = array(
+            'post_type' => array('post'),
+            'posts_per_page' => $postsNbr, //5
+            'category__in' => $id_cat,
+            'post__not_in' => array( $id_post),
+            'orderby' => 'rand',
+        );
+ 
+        $the_query = new WP_Query($the_query_args);
+
+ 
+        if ($the_query->have_posts()) { ?>
+           
+            <?php
+            while ($the_query->have_posts()):
+                $indx++;
+                $the_query->the_post(); ?>
+
+                <div class="rand-post"> 
+                    <a href="<?php the_permalink() ?>" class="permalink">
+                        <h4>
+                            <?php
+                            $title = get_the_title();
+                            $short = mb_strimwidth($title, 0, 25, '...');
+                            echo $short . ' N° ' . $indx;
+                            ?>
+                        </h4>
+                    </a>
+ 
+                </div>
+                <!-- end row  -->
+
+            <?php endwhile;
+        } else { ?>
+            <div class="alert alert-danger text-center">
+                <h2> Pas de Posts </h2>
+            </div>
+        <?php } ?>
+        <!-- /* Restore original Post Data */ -->
+        <?php wp_reset_postdata(); ?>
+    </div> <!-- end .postes  -->
+
+    <!-- End Post random  :§/§  -->
+
+
+
+</div>
+
 
 <?php get_footer(); ?>

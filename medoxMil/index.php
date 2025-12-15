@@ -85,7 +85,10 @@
         </div>
 
     </div>
-
+<!-- Pagination avce les numeros  -->
+ <div class="pagintaion-numbring"> 
+     <?php echo  medoxMil_numbring_pagination() ;   ?>
+    </div>
 
 </div>
 

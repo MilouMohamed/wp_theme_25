@@ -59,8 +59,8 @@
                         <i class="fa-solid fa-paste"></i> Posts Count
                         <span>
                             <?php
-                            $postsNbr=count_user_posts(get_the_author_meta('ID'));
-                            echo  $postsNbr ?>
+                            $postsNbr = count_user_posts(get_the_author_meta('ID'));
+                            echo $postsNbr ?>
                         </span>
                     </p>
                 </div>
@@ -107,30 +107,34 @@
         <!-- End row -->
 
         <div class="postes">
+            <!-- Exercice de video  -->
 
             <?php $indx = 0;
-$postsNbrPerPage=6;
- $the_query_args=array(
-        'author'            => get_the_author_meta( 'ID' ) ,
-        'posts_per_page'   => $postsNbrPerPage,  
- );
-$the_query=new WP_Query( $the_query_args);
+            $postsNbrPerPage = 6;
+            $the_query_args = array(
+                'author' => get_the_author_meta('ID'),
+                'posts_per_page' => $postsNbrPerPage,
+            );
+           
+
+
+
+            $the_query = new WP_Query($the_query_args);
 
 
 
             if ($the_query->have_posts()) { ?>
                 <div class="alert alert-info mt-5 text-center">
                     <h2> <?php
-                    if( $postsNbr > $postsNbrPerPage) {
-                        echo  "Latest ";
- $postsNbr =$postsNbrPerPage;
+                    if ($postsNbr > $postsNbrPerPage) {
+                        echo "Latest ";
+                        $postsNbr = $postsNbrPerPage;
+                    } else {
+                        echo "You Have ";
                     }
-else {
-      echo  "You Have " ;
-}
 
-                     echo " [$postsNbr] Posts of ". get_the_author_meta('nickname')
-                        ?>  </h2>
+                    echo " [$postsNbr] Posts of " . get_the_author_meta('nickname')
+                        ?> </h2>
                 </div>
                 <?php
                 while ($the_query->have_posts()):
@@ -139,7 +143,7 @@ else {
 
                     <!-- start row  -->
                     <div class="row">
-                        <div class="author-post" >
+                        <div class="author-post">
                             <div class="col-xs-12 col-sm-3  ">
                                 <?php the_post_thumbnail('', [
                                     'class' => 'img-responsive  ',
@@ -159,7 +163,7 @@ else {
                                         ?>
                                     </h4>
                                 </a>
-                                <span class="info"> 
+                                <span class="info">
                                     <i class="fa fa-calendar"></i><?php the_time('F j, Y') ?>
                                     <i
                                         class="fa fa-comments"></i><?php comments_popup_link('0 Comments', '1 Comment', '% Comments'); ?>
@@ -170,7 +174,7 @@ else {
                                 </div>
 
                             </div>
-                        </div> 
+                        </div>
                     </div> <!-- end row  -->
 
                 <?php endwhile;
@@ -179,73 +183,74 @@ else {
                     <h2> Pas de Post</h2>
                 </div>
             <?php } ?>
-<!-- /* Restore original Post Data */ -->
- <?php  wp_reset_postdata(); ?>
+            <!-- /* Restore original Post Data */ -->
+            <?php wp_reset_postdata(); ?>
         </div> <!-- end .postes  -->
 
 
 
-<!-- Start Commenatires  -->
-<div class="comments">
-    
-<div class="row">
- <?php  
- $nbrCmnt=4;
+        <!-- Start Commenatires  -->
+        <div class="comments">
 
- $comnts_this_auth_args=array(
-'user_id'           => get_the_author_meta( 'ID' ),
-'status'            => 'approve',
-'post_status'       => 'publish',
-'post_type'         => 'post',
-'number'            => $nbrCmnt 
- );
- 
-$cmnts=get_comments( $comnts_this_auth_args );
+            <div class="row">
+                <?php
+                $nbrCmnt = 4;
 
+                $comnts_this_auth_args = array(
+                    'user_id' => get_the_author_meta('ID'),
+                    'status' => 'approve',
+                    'post_status' => 'publish',
+                    'post_type' => 'post',
+                    'number' => $nbrCmnt
+                );
 
-if($cmnts){
+                $cmnts = get_comments($comnts_this_auth_args);
 
 
-foreach($cmnts as $cmt){  ?>
-
-<div class="col-md-4 ">
-<div class=" row-cmnt">
+                if ($cmnts) {
 
 
-<!-- // echo "  ___ ". $cmt->comment_post_ID;  -->
-<a href="<?php  echo get_permalink( $cmt->comment_post_ID )    ?>"> 
-<?php  echo get_the_title( $cmt->comment_post_ID )    ?> 
-</a>
+                    foreach ($cmnts as $cmt) { ?>
 
-<span>
-  <i class="fa fa-calendar"></i>  added on  <?php  echo  mysql2date( 'l, F j, Y',   $cmt->comment_date )  ?> 
-</span>
-<span>
-    <?php  echo   $cmt->comment_content  ?> 
-</span>
+                        <div class="col-md-4 ">
+                            <div class=" row-cmnt">
 
 
-</div>
-</div>
+                                <!-- // echo "  ___ ". $cmt->comment_post_ID;  -->
+                                <a href="<?php echo get_permalink($cmt->comment_post_ID) ?>">
+                                    <?php echo get_the_title($cmt->comment_post_ID) ?>
+                                </a>
+
+                                <span>
+                                    <i class="fa fa-calendar"></i> added on
+                                    <?php echo mysql2date('l, F j, Y', $cmt->comment_date) ?>
+                                </span>
+                                <span>
+                                    <?php echo $cmt->comment_content ?>
+                                </span>
 
 
- <?php  
-} //end foreach 
-}else { ?>
-<div class=" row-cmnt">
-This Author Dont Have Any Comments
-</div>
-
-<?php  
-}
- ?>
+                            </div>
+                        </div>
 
 
+                        <?php
+                    } //end foreach 
+                } else { ?>
+                    <div class=" row-cmnt">
+                        This Author Dont Have Any Comments
+                    </div>
+
+                    <?php
+                }
+                ?>
 
 
-</div>
-</div> 
-<!-- End  Commenatires  -->
+
+
+            </div>
+        </div>
+        <!-- End  Commenatires  -->
 
 
 
@@ -256,7 +261,7 @@ This Author Dont Have Any Comments
     </div>
     <!-- End container -->
 
- 
+
 
 
 </div>
