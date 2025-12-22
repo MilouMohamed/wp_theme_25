@@ -296,6 +296,22 @@ border: 1px solid #0000008e;
     top: 100%;
 }
 
+.single-post .bypostauthor { 
+    position: relative;
+    overflow: hidden  !important; 
+}
+.single-post .bypostauthor:after{ 
+position: absolute;
+  content: "";
+  background: linear-gradient(#fff,transparent);
+  width: 88px;
+  height: 28px;
+  transform: rotateZ(-45deg);
+  bottom: 0;
+  right: -25px;
+  color: #070707;
+    
+}
 
 /* Start info Aujthor  */
 .info-author{
@@ -504,10 +520,29 @@ border: 1px solid #0000008e;
 }
 
 
+ 
+/* PAge 404 */
+.not-fond-page  {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+height: calc(95vh - 100px)
+}
 
+.not-fond-page  h1{
+color: #707070;
+  font-size: 5rem;
+ margin: 50px auto 30px;
+  font-weight: bold;
+  display: block;
+}
 
-
-
+.not-fond-page  .descrip{
+color: #919191;
+color: #646464;
+  margin:  20px auto;
+}
 
 
 
