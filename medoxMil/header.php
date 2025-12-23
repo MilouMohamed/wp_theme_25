@@ -46,3 +46,9 @@ error_reporting(E_ALL);
 
         </div>
     </nav>
+ <?php if (is_category('web')): ?>
+    <div class=" bg-web-cat">
+    <?php else: ?>
+  <div>
+    <?php endif; ?>
+    

@@ -102,6 +102,8 @@ function medoxMil_excerpt_length($length)
 {
   if (is_author()) {
     return 30;
+  }elseif (is_category()) {
+    return 10;
   }
 
   return 50; //attention rede more dans post edite 

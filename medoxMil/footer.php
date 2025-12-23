@@ -1,3 +1,4 @@
+</div><!-- end Header -->
 
 <div class="footer text-center">
     Milou Med &copy; 
