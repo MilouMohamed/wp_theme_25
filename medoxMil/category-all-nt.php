@@ -20,6 +20,9 @@
                         <span>Comments Count : 102</span>
                     </div>
                 </div>
+                <div class="col-12">
+                    <h4>Page speciale pour All-in cate Non classee</h4>
+                </div>
             </div>
         </div>
         <div class="row">
