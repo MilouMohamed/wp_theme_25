@@ -102,7 +102,9 @@ function medoxMil_excerpt_length($length)
 {
   if (is_author()) {
     return 30;
-  }elseif (is_category()) {
+  } elseif (is_category("web")) {
+    return 20;
+  } elseif (is_category()) {
     return 10;
   }
 
@@ -148,6 +150,23 @@ function medoxMil_numbring_pagination()
 
 }
 
+// Regester Windget sidebar Medox 
+function medoxMil_regestre_widget()
+{
+  register_sidebar(array(
+    "name" => "Mian Regseter Medox",
+    "id" => "Mian-sidebar",
+    "description" => "Mian Sidebar Pour Categore WEB",
+    "class" => "main-sidebar",
+    "before_widget" => "<div class='widget-content'>",
+    "after_widget" => "</div>",
+    "before_title" => "<h3 class='widget-title'>",
+    "after_title" => "</h3>",
+  ));
+
+}
+ 
+add_action('widgets_init', 'medoxMil_regestre_widget');
 
 
 ?>
