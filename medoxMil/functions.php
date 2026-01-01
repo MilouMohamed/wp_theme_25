@@ -153,16 +153,16 @@ function medoxMil_numbring_pagination()
 // Regester Windget sidebar Medox 
 function medoxMil_regestre_widget()
 {
-  register_sidebar(array(
-    "name" => "Mian Regseter Medox",
-    "id" => "Mian-sidebar",
-    "description" => "Mian Sidebar Pour Categore WEB",
-    "class" => "main-sidebar",
-    "before_widget" => "<div class='widget-content'>",
-    "after_widget" => "</div>",
-    "before_title" => "<h3 class='widget-title'>",
-    "after_title" => "</h3>",
-  ));
+  register_sidebar( array(
+        'name'          => __( 'Main Register Medox', 'textdomain' ),
+        'id'            => 'main-sidebar',
+        'description'   => __( 'Descr : Main Sidebar pour catégorie Web', 'textdomain' ),
+        'class'         => 'main-sidebar-medox',
+        'before_widget' => '<div id="%1$s" class="widget %2$s widget-content-medox">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widget-title-medox">',
+        'after_title'   => '</h3>',
+    ) );
 
 }
  

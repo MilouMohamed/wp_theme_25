@@ -93,7 +93,13 @@
         </div>
         <div class="col-md-4">
             <div class="side-bar">
-                Here Well Be Sidebar ******
+
+                <?php
+                get_sidebar( "web");
+
+                // if(is_active_sidebar(  'main-sidebar' ))
+                //    dynamic_sidebar(  'main-sidebar');
+                ?>
             </div>
 
         </div>
